@@ -14,6 +14,10 @@ background_mode = 2
 sky = SubResource("Sky_ng0wg")
 glow_enabled = true
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_renmy"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_k4rvc"]
+
 [node name="Node3D" type="Node3D" unique_id=332201072]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=357610568]
@@ -22,3 +26,17 @@ environment = SubResource("Environment_pqb02")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1166515027]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
+
+[node name="player1" type="CharacterBody3D" parent="." unique_id=956141028]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player1" unique_id=1164566740]
+shape = SubResource("CapsuleShape3D_renmy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player1" unique_id=793389713]
+mesh = SubResource("CapsuleMesh_k4rvc")
+
+[node name="Node3D" type="Node3D" parent="player1" unique_id=833940298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="Camera3D" type="Camera3D" parent="player1/Node3D" unique_id=1850651311]
