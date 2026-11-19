@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dpx72icv41w15"]
 
+[ext_resource type="Script" uid="uid://dbfeg2relphkt" path="res://player_1.gd" id="1_ng0wg"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f256n"]
 sky_top_color = Color(0, 0.38431373, 0.78431374, 1)
 sky_horizon_color = Color(0.7491445, 1.0328606, 1.0517955, 1)
@@ -29,6 +31,7 @@ shadow_enabled = true
 
 [node name="player1" type="CharacterBody3D" parent="." unique_id=956141028]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_ng0wg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="player1" unique_id=1164566740]
 shape = SubResource("CapsuleShape3D_renmy")
